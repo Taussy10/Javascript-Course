@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  <!-- Js is prototype based language -->
+  <!-- oops is programming pardiam: a particular way to write code -->
+
+  <!-- Objects are 
+  Collection of propertes and mehod: example: toLowerCase -->
+
+  <!-- Why oops -->
+
+  <!-- Parts of object
+  object literal: literraly it's object 
+  constructor:  function 
+  prototype
+  class
+  inheritence(new, this: keywords)
+
+  4pillars of oops
+  Abstraction
+  encapsulation
+  inheritence
+  polymorphism -->
+
+  <script>
+   const user = {
+    userName: "Tausif",
+    logginCount: 20,
+    signedIn: 5,
+    getUserDetails: function () {
+    console.log('got username');
+    console.log(`username: ${ this.userName}`);
+    console.log(this.getUserDetails);
+    /* This is used in local object then whatever value you want take it */
+    }
+   }
+
+   console.log(user.userName);
+   console.log(user.getUserDetails());
+
+   console.log(this);
+  //it's in global object name: you already know global object = just like global variable. so it will give value of every object in global= browser: you alredy know browser is made using object which can be acessed by dot notations and instead of using object name[object name is console.log(window)] we can use this keyword in global object we have browser key-values and in local object we make objects and can acessed by this.property(this refers to object name can be local or global) 
+  
+  </script>
+
+
+<script>
+  /*custructor functions: new, it makes new executional context so that it can't affect other it gives naya(what you want) */
+  //example
+  const promiseOne = new Promise(() =>{})
+  const date = new Date()
+</script>
+</body>
+</html>

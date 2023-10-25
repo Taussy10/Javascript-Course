@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+</head>
+<style>
+   body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: rgb(24, 23, 23);
+  }
+  input{
+    padding: 10px 10px 10px 10px;
+    font-size: 15px;  
+  }
+button{
+  background-color: green;
+  color: white;
+  padding: 10px 10px 10px 10px ;
+  cursor: pointer;
+}
+</style>
+<body>
+  
+  <p>Amazon Discount Calculator </p>
+  <p>Orders under $40 = - $10 discouont. </p>
+  <p>Orders over or equal $40 = No discouont. </p>
+
+  <input type="text" placeholder="Cost of order">
+  <button>Calculate</button>
+  <p class="para"></p>
+
+  <script>
+    /*When I click something then should display on p(class = para) tag
+    p me display krna hai add button click krne par*/
+
+    const input = document.querySelector('input')
+    const para = document.querySelector('.para')
+    console.log(para);
+const button = document.querySelector('button')
+   
+ button.addEventListener('click',function () {
+      let value = Number(input.value)
+      para.innerHTML=value
+      if (value < 40) {
+    para.innerHTML=value -10
+    
+  } else if(value => 40) {
+    para.innerHTML=value 
+  }
+})
+</script>
+</body>
+</html>

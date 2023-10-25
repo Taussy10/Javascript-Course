@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title >color Changer</title>
+</head>
+<body>
+  <h1 id="title">Color Switcher Site</h1>
+  <button class="button" id="grey" style="background: grey;">grey</button>
+      <button class="button" id="orange" style="background: orange;">orange</button>
+      <button class="button" id="blue" style="background: blue;">blue</button>
+      <button class="button" id="yellow" style="background: yellow;">yellow</button>
+  <script>
+const buttons = document.querySelectorAll('.button')
+const body = document.querySelector('body')
+console.log(buttons);
+console.log(body);
+
+buttons.forEach((button) => {
+  /*1.Event box has so many details in nodelist so we gave that box name as event. 
+  2. you can console.log(event) and check target 
+  2. event.target: it target the element that you clicked then you can event.target.id for getting id from nodeList */
+  button.addEventListener('click', (event)=> {    
+  console.log(event);
+ // console.log(event.target.id);
+  if (event.target.id==='grey') {
+    //body ka backgroundColor = grey kr do
+    body.style.backgroundColor = 'grey';
+  } else if (event.target.id==='orange') {
+    body.style.backgroundColor = 'orange';
+  } else if (event.target.id==='blue') {
+    body.style.backgroundColor = 'blue';
+  }  else if (event.target.id==='yellow') {
+    body.style.backgroundColor = 'yellow';
+  }  else { (event.target.body) 
+    body.style.backgroundColor = 'black';
+  }
+  
+  })
+})
+  </script>
+</body>
+</html>

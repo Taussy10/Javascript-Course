@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buttons</title>
+  <style>
+    *{
+      background-color: black;
+      color: white;
+      border-color: white;
+    }
+    .cart-btn{
+      background-color: orange;
+      color: black;
+    }
+    .buy-btn{
+      background-color: yellow;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <p>Adults Plain Cotton T-shirt</p>
+  <p>Price: $7.99</p>
+  <button class='cart-btn' onclick="
+  alert('Added');
+  ">Add to Cart</button>
+  <button class="buy-btn" onclick="
+  alert('Loding...');
+  alert('Purchased');
+  ">Buy Now</button>
+  <button onclick="
+  // let add4 = 0
+  // add4 +=4
+  // console.log(add4);
+
+
+  updateCartQuantity(4);" >4</button>
+  <button onclick="
+  // let add5 = 0
+  // add5 +=5
+  // console.log(add5);
+  // 
+  updateCartQuantity(5);
+  " >5</button>
+  <button ondclick="
+  updateCartQuantity(-2);">-2</button>
+
+  <button onclick="
+    updateCartQuantity(-3);
+  ">-3</button>
+
+  <button onclick="
+  updateCartQuantity(-1);
+">Remove from the Cart</button>
+
+  <button onclick=" 
+  console.log(`cartQuantity : ${cartQuantity}`);
+  "> Show Cart Quantity</button>
+
+<button onclick=" 
+cartQuantity=0
+console.log('Cart was Reset');
+console.log(`cartQuantity : ${cartQuantity}`);
+
+"> Reset the Cart</button>
+
+  <script>
+  let cartQuantity  = 0;
+
+  const updateCartQuantity = (change) => {
+    if (cartQuantity +change>10) {
+      alert('The cart is full')
+    } else if(cartQuantity + change<0) {
+      alert('Not enough items in the cart')
+    }
+    else{
+      cartQuantity += change
+      console.log(`cart quantity: ${cartQuantity}`);
+    }
+  };
+  </script>
+</body>
+</html>

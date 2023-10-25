@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cart-2</title>
+  
+<style>
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: rgb(24, 23, 23);
+  }
+  .input-button{
+    padding: 10px 10px 10px 10px;
+    font-size: 15px;
+    
+  }
+.calcu{
+  background-color: green;
+  color: white;
+  padding: 10px 10px 10px 10px ;
+  cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+  
+ <p>Amazon Discount Calculator</p>
+
+ <p>Orders under $40 = - $10 discouont.</p>
+
+ <p>Orders over $40 = No discouont.</p>
+
+ <input type="text" id="search-input" placeholder="Cost of order" class="js-cost-input input-button">
+      <button class="calcu"
+      onclick="calculateTotal()" >
+      Calculate</button>
+      <p class='js-total-cost'></p>
+      <script>
+
+        function calculateTotal (){
+         let inputELement = document.querySelector('.js-cost-input');
+         let cost = Number(inputELement.value)
+        /*tags which has no closing tag we use 1st: we put in variable then use it*/
+        if(cost < 40){
+          cost -=10 ;
+        }
+          else {
+            cost = cost;
+
+
+        }
+        document.querySelector('.js-total-cost')
+        .innerHTML= `$${cost}`;
+      }
+
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promises</title>
+</head>
+<body>
+  <script>
+    /*promise: part of async js, it promises that the code will execute when you say(not sinle threaed it's async)*/
+    /* promise is object that has some method() it's object cause it fetch api which has data in object;  
+
+ /* states(awastha) of Promise
+
+ Pending,Fullfilled,Rejected */
+ /*how to make promises
+ two parts: create and consume */
+ //1.Create
+ const promiseOne = new Promise(function (resolve,reject) {
+// resolve:It resolve(consume:give what we want)
+//resolve and reject order should be same REM by first we resolve then we reject
+//do async test
+setTimeout(() => {
+  console.log('complete');
+  resolve()
+}, 1000);  
+ })
+
+//2.consume
+ /*consuming the promise: We have then() method which has direct relation with 'resolve' it resolve(consume) the promise*/  
+ promiseOne.then(function () {
+  //then() uses for getting promises values
+  console.log('consumed');
+ })
+
+
+ //getting data 
+ const promiseTwo = new Promise(function (resolve,reject) {
+  setTimeout(() => {
+   // the order of resolve and reject written is should be use everywhere
+resolve([
+{name:"Tausif", rollNo:21},
+{name:"Chuha",rollNo:14}
+])}, 1000);
+ })
+
+ console.log(promiseTwo);
+promiseTwo.then(function (user) {
+  //We store array in user parameter 
+  console.log(user[1].name);
+  
+ })
+ 
+ const promiseFour = new Promise(function (resolve,reject) {
+
+setTimeout(() => {
+  let error = true;
+  if (!error) {
+    resolve({user:'Kutta', password:212})
+    
+  } else {
+    reject('Error: Something went wrong') 
+    //reject gives error if something got error we create by reject() consume it by catch()
+  }
+}, 1000);
+}) 
+
+promiseFour.then(function (userThen) {
+console.log(userThen.user);
+return userThen.username
+})
+.catch(function (er) {
+  // Catch: we get error by using catch() if error happend(true/false)
+   console.log(er);
+})
+.finally(function () {
+// finally can use. just a default 
+console.log('Everything has happend');
+})
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+//consuming promise by async Await
+const promiseFive = new Promise(function (resolve,reject) {
+  let error = true;
+  if (!error) {
+    resolve({user:'billi', password:123})
+    
+  } else {
+    reject('Error: JS went Wrong') 
+    //reject gives error if something got error we create by reject() consume it by catch()
+  }
+}, 1000);
+
+
+/* Just a Alternate
+Bro for consuming(getting values) from promises , you can use async await(wating till you say to do something)
+*/
+async function consumePromiseFive() {
+  /*try catch: first we try to do something if it has error then error will be shown */
+  try {
+    const response = await promiseFive
+  console.log(response);
+  } catch (error) {
+    console.log(error);
+  }
+}
+consumePromiseFive()
+
+
+
+</script>
+</body>
+</html>

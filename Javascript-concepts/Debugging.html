@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debugging</title>
+</head>
+<body>
+  bugs: you do something but you don't get the thing that you want  basically you do mistake wrting logics bugs
+  it's not identfible
+
+  Errror: syntax error it's identifible
+
+  <!-- How to fight with bugs -->
+  <!-- 1.use console.log: you check typeof you will get
+  2. Use debugger
+   -->
+
+  <script>
+    const priceValue = prompt("Enter the price of the item");
+const FIXED_DELIVERY_FEE = 50;
+function calculateTotalPrice(price, fixedDeliveryFee) {
+  return price + fixedDeliveryFee;
+}
+// debugger; // this will set debugg in the code check in chrom dev tools
+const total = calculateTotalPrice(priceValue, 10);
+
+alert("The total price is $" + total);
+  </script>
+</body>
+</html>

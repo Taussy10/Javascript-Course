@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    /* For making dates,month starts from 0 to 11*/
+    const date = new Date(2003,0,30)
+    // const newDate = new Date("01-12-2003")
+    const date2 = date.toLocaleString()
+
+    const month = date.toLocaleString('en-US', { month: 'long' });
+  const day = date.toLocaleString('en-US', { day: '2-digit' });
+  const year = date.getFullYear();
+   console.log({month,day,year}); 
+    {/*To localeString is one of the best */}
+    
+    // console.log(date);
+    // console.log(newDate);
+    // console.log(date2);
+    // console.log(date3);
+    // console.log(date4);
+    // console.log(typeof date);
+
+   
+    
+  </script>
+</body>
+</html>

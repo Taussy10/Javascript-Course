@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+    <title>Your Local Time</title>
+    <style>
+      body {
+        background-color: #212121;
+        color: #fff;
+      }
+      .center {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #clock {
+        font-size: 40px;
+        background-color: orange;
+        padding: 20px 50px;
+        margin-top: 10px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+   
+    <div class="center">
+      <div id="banner"><span>Your local time</span></div>
+      <button id="clock"></button>
+    </div>
+    <script>
+      //For Selecting alway use querySelector/all cause it's syntax =  css syntax not getElementById
+const id = document.querySelector('#clock')
+console.log(id);
+
+
+
+  id.addEventListener('click', ()=> { 
+    setInterval(function() { 
+      const time = new Date().toLocaleTimeString()
+      id.innerHTML = time;
+    },1000)
+    
+  })
+
+
+//console.log(time);
+    </script>
+        
+  </body>
+</html>
+
+
+

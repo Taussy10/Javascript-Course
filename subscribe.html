@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+
+  <style>
+    button {
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      border-radius:5px;
+      padding: 7px -2px 3px 5px;
+      height:33px;
+      width:85px;
+      cursor: pointer;
+    }
+    /* After click this will execute */
+    .is-subscribed{
+      background-color: rgb(240, 240, 240);
+      color: black;
+    }
+
+
+  </style>
+</head>
+<body>
+  <p>YouTube Subscribe Button</p>
+  <button onclick=" subscribe()
+ 
+  //  Subscribe button shouldn't have otherwise it will not work cause we want to show === in if tag 
+  // if you want text then use innerText property
+  " class='js-subscribe-button' >Subscribe </button>
+
+
+  <script>
+    /*we put in function so that we can use onclick button on button tag*/
+
+    function subscribe()
+    {
+      const buttonElement = document.querySelector('.js-subscribe-button');
+
+      if (buttonElement.innerHTML=== 'Subscribe')
+      { buttonElement.innerHTML='Subscribed';
+      /*style syntax for interacting with CSS using DOM*/
+      buttonElement.classList.add('is-subscribed');
+      }
+      else  {
+      buttonElement.innerHTML='Subscribe';
+      buttonElement.classList.remove('is-subscribed');}
+    }
+  </script>
+</body>
+</html> 

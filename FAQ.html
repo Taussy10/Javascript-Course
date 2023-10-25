@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ(AKA Accordion)</title>
+  </head>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .accordion {
+      width: 65%;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 30px;
+    }
+
+    .accordion .accordion-title {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .accordion .content-container .question {
+      padding: 18px 0px;
+      font-size: 22px;
+      cursor: pointer;
+      border-bottom: 1px solid #000;
+
+      position: relative;
+    }
+
+    .accordion .content-container .question::after {
+      content: "+";
+
+      position: absolute;
+      right: -5px;
+    }
+
+    .accordion .content-container .answer {
+      padding-top: 15px;
+      font-size: 22px;
+      line-height: 1.5;
+      width: 100%;
+
+      height: 0px;
+      overflow: hidden;
+      transition: 0.5s;
+    }
+
+    Javascript Styling Link .accordion .content-container.active .answer {
+      height: 150px;
+    }
+
+    .accordion .content-container.active .question {
+      font-size: 18px;
+      transition: 0.5s;
+    }
+
+    .accordion .content-container.active .question::after {
+      content: "-";
+      font-size: 30px;
+      transition: 0.5s;
+    }
+  </style>
+  <body>
+    <div class="accordion">
+      <h2 class="accordion-title">Frequently Asked Questions</h2>
+
+      <div class="content-container">
+        <div class="question">What is the return Policy?</div>
+        <div class="answer">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
+          beatae dolores voluptate consequuntur, amet modi molestiae quasi dicta
+          hic id facere quam pariatur a earum fugit sint? Corrupti, doloribus
+          esse.
+        </div>
+      </div>
+      <div class="content-container">
+        <div class="question">When will i receive my order?</div>
+        <div class="answer">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
+          beatae dolores voluptate consequuntur, amet modi molestiae quasi dicta
+          hic id facere quam pariatur a earum fugit sint? Corrupti, doloribus
+          esse.
+        </div>
+      </div>
+      <div class="content-container">
+        <div class="question">Where are you located?</div>
+        <div class="answer">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
+          beatae dolores voluptate consequuntur, amet modi molestiae quasi dicta
+          hic id facere quam pariatur a earum fugit sint? Corrupti, doloribus
+          esse.
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const accordion = document.querySelectorAll(".content-container");
+      console.log(accordion);
+
+      accordion.forEach((loopBox) => {
+        const answer = loopBox.querySelector(".answer"); // Get the corresponding answer
+        loopBox.addEventListener("click", function (event) {
+          /* classList is for working with class 
+    Toggle the 'active' class on the clicked accordion item */
+          loopBox.classList.toggle("active");
+
+          // Toggle the height of the answer based on the 'active' class
+          if (loopBox.classList.contains("active")) {
+            answer.style.height = answer.scrollHeight + "px";
+          } else {
+            answer.style.height = "0px";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

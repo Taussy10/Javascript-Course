@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do</title>
+</head>
+<body>
+  <h1>To-Do List 🔖</h1>
+  <input type="text" placeholder="Todo name" class=" js-name-input"> 
+  <button class="js-btn" onclick="addTODO()" >Add</button>
+  <div class="js-todo-list"> </div>
+
+
+  <script>
+  //create an array to store To-Dos
+  
+  const toDoList = ["chuha kha le","Billy maar dio" ]
+    
+  renderTodoListHTML() 
+
+  function renderTodoListHTML() {
+
+    let toDoListHTML='';
+
+    for (let index = 0; index <toDoList.length; index++) {
+      const todo = toDoList[index];
+      console.log(todo);
+      const html = 
+      `<p>
+        ${todo}
+        <button onClick="
+        toDoList.splice(${index},1)
+        renderTodoListHTML() 
+        ">Delete</button>
+        </p>`
+      toDoListHTML +=html;
+    }
+    console.log(toDoListHTML);
+    
+    const box = document.querySelector('.js-todo-list') 
+box.innerHTML=toDoListHTML;
+    console.log(toDoList); }
+
+ const addTODO = () => {
+const inputElement = document.querySelector('.js-name-input')
+
+ const name= inputElement.value 
+ const push = toDoList.push(name);
+
+ /*if console push then it will show number of values in a array*/
+ 
+ console.log(push);
+ console.log(toDoList); 
+ inputElement.value = ''
+ renderTodoListHTML() 
+ }
+
+</script>
+</body>
+</html>

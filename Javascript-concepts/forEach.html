@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Stack & Code Execution</title>
+</head>
+<body>
+  <!-- How does code execute -->
+  <!-- JS execution context -->
+<p id="p">chuha</p>
+  <script>
+//forEach always use querySelectorAll
+const p = document.querySelectorAll('#p')
+
+/*In loop everything inside box then use that box to add functionlily that you want*/
+
+p.forEach(box => {
+box.addEventListener('click',function () {
+    console.log('chuha');
+    box.innerHTML='Chuhia'
+  })
+});
+
+console.log(Map(he =>{
+  console.log('hello');
+}));
+
+</script>
+
+</body>
+</html>

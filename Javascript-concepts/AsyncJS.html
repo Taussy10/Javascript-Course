@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Async js</title>
+</head>
+<body>
+ <!-- 1st knwo how js works   --> 
+ <p>js is single threaded language which works synchronous: sync:together + chronous:time ::::: means first this then this code will execute with time </p>
+ <p>but we can make asynchrounous: not together time: we have function setTimeout() for this </p>
+<script> 
+const a =setTimeout( func1,1000);   
+
+function func1() {
+  console.log('hello');  
+}
+console.log(a);
+console.log('chuha');
+
+//console.log(clearTimeout(a)); 
+
+</script>
+
+</body>
+</html>

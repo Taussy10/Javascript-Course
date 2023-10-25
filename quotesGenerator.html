@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote Genrator</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>Javascript quote Genrator</h2>
+    </div>
+  </div>
+
+<div class="main-contenet">
+  <div class="text-area">
+    <h4 class="quote">
+      "You're braver than you believe, and stronger than you seem, and smarter than you think.",
+  </h4>
+    <div class="person">Jay</div>
+    <div class="button">
+      <button id="new-quote">New Quote</button>
+    </div>
+  </div>
+</div>
+
+    <script>
+      let buttons = document.querySelector('#new-quote')
+      console.log(buttons);
+
+      let quote = document.querySelector('.quote')
+      console.log(quote);
+      let person = document.querySelector('.person')
+      const quotes = [
+    {
+       quote: "The good life is a process, not a state of being. It is  a direction, not a destination."
+    },
+    {
+        text:"Keep your face to the sunshine and you cannot see a shadow."
+
+    },
+    {
+        text: "Positive anything is better than negative nothing."       
+    },
+    {
+        text: "The only time you fail is when you fall down and stay down."
+    }
+];
+      buttons.addEventListener('click',function (event) {
+        let randomNum =Math.floor( Math.random()*quotes.length)
+
+        quote.innerHTML=quotes[randomNum].text
+        if (event.id === 'new-quote' ) {
+          console.log('taus');
+        } else {
+        }
+      })
+    </script>
+</body>
+</html>

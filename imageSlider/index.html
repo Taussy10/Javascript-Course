@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>slideSlider</title>
+</head>
+<style>
+  .slider {
+    width: 300px;
+    background-color: red;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slide-container {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .slide {
+    width: 300px;
+    height: 200px;
+    flex-shrink: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .left-arrow {
+    width: 50px;
+    height: 50px;
+  }
+
+  .right-arrow {
+    width: 50px;
+    height: 50px;
+  }
+</style>
+<body>
+  <div class="slider">
+    <div class="slide-container">
+      <div class="slide"><img src="img/10.jpg" alt="" class="slide-image"></div>
+      <div class="slide"><img src="img/11.jpg" alt="" class="slide-image"></div>
+      <div class="slide"><img src="img/13.jpg" alt="" class="slide-image"></div>
+      <div class="slide"><img src="img/14.jpg" alt="" class="slide-image"></div>
+    </div>
+  </div>
+
+  <button class="left-arrow">left</button>
+  <button class="right-arrow">right</button>
+
+  <script>
+    const slideContainer = document.querySelector('.slide-container');
+    
+    const slides = document.querySelectorAll('.slide');
+    const slideWidth = slides[0].clientWidth;
+    const prevButton = document.querySelector('.left-arrow');
+    const nextButton = document.querySelector('.right-arrow');
+    let currentIndex = 0;
+
+    function showSlide() {
+      const shiftDistance = -currentIndex * slideWidth;
+      slideContainer.style.transform = `translateX(${shiftDistance}px)`;
+    }
+
+    function goToPreviousSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide();
+    }
+
+    function goToNextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide();
+    }
+
+    prevButton.addEventListener('click', function() {
+      goToPreviousSlide();
+    });
+
+    nextButton.addEventListener('click', function() {
+      goToNextSlide();
+    });
+ 
+    showSlide();
+  </script>
+</body>
+</html>

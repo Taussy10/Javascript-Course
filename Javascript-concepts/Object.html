@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object</title>
+</head>
+<body>
+  <script>
+    const Obj1 = {
+      name:"Chuhia",
+      earns: 10
+    };
+    // console.log(Obj1.name); 
+    // console.log(Obj1['earns']); 
+
+    //to change the value
+  //  console.log(Obj1.name='Chuha'); 
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+/*Destructing in objects for doing clean make sense in react.js*/
+
+  const items = {
+    books: 10,
+    pen: 5,
+    pencil: 3,
+    eraser: 2
+  }
+
+  console.log(items.books);
+  // In normal Life: const items = books
+  /*In Destructing 👇 we use curly braces cause we use react.js */
+  const {books} = items
+  const {pen} = items
+  console.log(books);
+  console.log(pen);
+  
+</script>
+
+<script>
+    
+    let user = { name: 'John' };
+
+let admin = user;
+
+admin.name = 'Pete'; // changed by the "admin" reference
+
+console.log(user);
+console.log(admin);
+// 'Pete', changes are seen from the "user" reference
+
+   
+let user2 = {
+  name: "John",
+  age: 30
+};
+console.log(user);
+
+let admin2 = {}; // the new empty object
+
+// let's copy all user properties into it
+for (let key in user) {
+  admin2[key] = user[key];
+}
+
+// now admin2 is a fully independent object with the same content
+admin2.name = "Pete"; // changed the data in it
+console.log(admin2);
+
+</script>
+</body>
+</html>

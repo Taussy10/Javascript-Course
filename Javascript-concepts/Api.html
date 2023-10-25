@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API</title>
+</head>
+<body>
+  <!-- XML request called ajax
+  you can get api from randomNameGenrator and you can beauftiy by JSON formatter site(Yeah api is in JSON)
+  look in tree in formatter site
+   
+  How to get api data
+  5 state
+  0. unsent: clinet has been created open() not called
+  1. OPENED: open() has been called 
+  2. Headers Recived: send() has been called and headers and status are avaliable
+  3. Loading: Downloading responseText holds partial data 
+  4. Done: the operations is complete api jaa chuka hai -->
+
+<script>
+// 1.We request the data new keyword cause we are making fresh object 
+const xhr = new XMLHttpRequest()
+xhr.open('GET', 'API Link')
+//after sending request states(all 5) changes can be checked by
+//console.log(xhr.readyState());
+
+xhr.send()
+
+const a = 23
+const b = 14
+console.log(JSON.parse(a)+String(b));
+// console.log(a+b);
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoisiting</title>
+</head>
+<body style="display: flex; align-items: center;">
+  <h1>Chuha 🐀 </h1>
+  <script>
+
+    //Function execute when it's called outside of function body { } NOTE YOU WRITE EVERYTHING IN BODY{} EVEN CONSOLE
+    function func() {
+      const hhe = 'hi'
+      console.log(hhe);
+    }
+    func()
+    function one() {
+      const userName = 'Tausif'
+     
+      function two() {
+        const website = 'Google'
+        console.log(userName);
+        console.log(website);
+      }
+      //function two() execute: called outside of body 
+      two()
+    }
+    // function one() one()execute: called outside of function body
+        one()
+  </script>
+</body>
+</html>

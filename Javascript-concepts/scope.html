@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scope</title>
+</head>
+<body>
+   <!-- Scopes -->
+
+   <script>
+   {
+    //scope is curly braces
+    var a   = 1
+    const b = 2
+    let c  = 3
+   }
+  // console.log(a); //var can be accesed out of scope 
+  // console.log(b); //const and let can't accesed out of
+   //console.log(c); //scope
+
+
+   //global variable written above the scope can be acessed out and in of scope
+   const d = 4
+   {
+  console.log(d);
+  const e = 5 //local variable can be accesed only in scope
+  console.log(e);
+   }
+   console.log(d);
+
+   //Nested scope: 
+
+   </script>
+</body>
+</html>

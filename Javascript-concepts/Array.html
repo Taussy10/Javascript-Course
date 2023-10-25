@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array</title>
+</head>
+<body>
+  <script>
+    const Array1 = [1,3,5]
+    // console.log(Array1[0]);
+    // console.log(Array1[1]);
+    //Array1.push('chuha')
+    // console.log(Array1);
+    
+   const Array2 = [0,2,4,]
+  Array1.push(Array2)
+   console.log(Array1);/*It will add full array2 not single single element so we use ...Spread operator to break the array2 and push in array1 every element */
+   Array1.push(...Array2)
+   console.log(Array1);
+  
+    /* instead of one by one console use map Method shortcut and change the values*/
+
+    /* Map creates it's own new array that can be access by currentValue having index cause it's an array
+    
+arrayName.map(function(currentValue,index), {keyName-FromArray.title} ) 
+It has callBack function curretnValue: 
+*/
+   const newArray = Array1.map(function(cValue,i){ return i+  cValue*2}
+   )
+  //  console.log(newArray);
+   const newArray1 = Array1.map(function(cValue){ return cValue*2}
+   )
+  //  console.log(newArray1);
+
+  </script>
+</body>
+</html>

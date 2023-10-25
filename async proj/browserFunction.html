@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    
+    <h1>Start should change the Background color every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+      /* when start btn clicked then it should change color after every second randomly */
+      const startBtn = document.querySelector('#start')
+      const stopBtn = document.querySelector('#stop')
+
+      //YOu have to declare intervalId out of scoope of addEventlistener cause you wanna execure in diffrent place if you declare inside scope the you can't use intervalId in stopBtn
+      let intervalId; /*interval id not present*/
+
+      
+      //better code tip 1(a): check if interval id present or not 
+      if (intervalId !== null) 
+      /* alternate syntax: if(!intervalId) */
+      {
+        startBtn.addEventListener('click', function(){
+        intervalId = setInterval( colorChanger, 0.1);
+      })
+      }
+     
+
+      stopBtn.addEventListener('click',function () {
+        clearInterval(intervalId)
+        //better code tip 2(a): flush the intervalId.
+        intervalId = null;
+      })
+      function colorChanger() {
+        const red =  Math.floor(Math.random()*256);
+        const green = Math.floor(Math.random()*256);
+        const blue =Math.floor( Math.random()*256);
+        const color = `rgb(${red},${blue},${green})`
+       document.body.style.backgroundColor = color;
+        console.log(color);
+      }
+
+    </script>
+
+  </body>
+</html>

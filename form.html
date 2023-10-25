@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- How to make form  -->
+  <!-- You wrap everthing every input tag/(everything related to form) 
+  in form tag including submit buttoon -->
+<script>
+  // Yu select submit button and use
+    submitBtn.addEventListener('click', (e)=>{
+    e.preventDefault();
+
+    if(validateName() && validateEmail() && validatePassword()){
+        alert("Form Submitted Successfully");
+    }
+});
+
+  </script>
+</body>
+</html>

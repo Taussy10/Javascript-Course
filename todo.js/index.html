@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+ 
+  <input type="text" placeholder="Add To-Do" class="input">
+  <button>Add</button>
+<div class="tasks"> 
+</div>
+<script>
+
+  const input = document.querySelector('.input')
+  console.log(input);
+const button = document.querySelector('button')
+
+const tasksList = document.querySelector('.tasks')
+console.log(tasksList);
+
+  const array = ['Chuha Khana','Billi Marna hai ']
+
+    button.addEventListener('click',function () {
+      let value = input.value; 
+    console.log(value);
+    const taskItem = document.createElement('li')
+    const del = document.createElement('button')
+    taskItem.innerHTML = input.value
+    del.innerHTML='Delete'
+    tasksList.appendChild(taskItem)
+    tasksList.appendChild(del)
+    input.value=''
+    // div.innerHTML=input.value
+    array.push(value)
+    // console.log(array);
+    del.addEventListener('click',function () {
+      tasksList.removeChild(taskItem)
+      tasksList.removeChild(del)
+    })
+    })
+</script>
+<script src="script.js"></script>
+
+<script>
+
+</script>
+</body>
+</html>

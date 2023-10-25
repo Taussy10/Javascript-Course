@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>function</title>
+</head>
+<body>
+  <button id="btn">Click Me</button>
+  <button id="btn">Click</button>
+
+  <script>
+    /* Parameter/argument is like variable of maths we declare  then we do some maths on that variable in body of function then when we call the function we put values of variables*/
+    function addNum(a,b) {
+   //   return console.log(a+b);
+    }
+
+    addNum(2,3)
+    /*Focus on only inside forEach Call back function it is anymons(no name) function:  (button)=> { } 
+    in normal func: const hello = () => { } */
+   
+let buttons = document.querySelectorAll('#btn')
+buttons.forEach((buttons) => { 
+ addEventListener('click', function (event) {
+  // console.log('Taussy');
+
+  //forEach loop is used when you multiple element cause you have to use querySelectorAll
+ }) 
+}); 
+ 
+/*setTimeOut: Allows us to run the function once after the specific time
+
+time in miliseconds , 1000ms =1secs */
+
+// setIntervalF(callBackFunction,1000
+// )
+
+time = setTimeout(() => {
+ console.log('Chuha');
+}, 1000);
+
+console.log(time);
+/* setTimeOut gives unique ID */
+clearTimeout(time)
+/* can clear timeout using it's  unique ID */
+
+/*setInterval: Allows us to run the function  after every interval  same as setTimeout but have clearInterval()*/
+ </script>
+
+ <script>
+  //Method in js 
+  const object = {
+    fun: function function1() {
+      console.log('Function inside object');
+    }
+  }
+  object.fun()
+  console.log('console.log is method cause console is object provided by js and log is function YOU CAN CHECK BY TYPEOF');
+  console.log(typeof console);
+  console.log(typeof console.log);
+  // Math.random() is also object and function respectively so it's a method    
+
+ console.log('hello'.length);
+
+ </script>
+
+ <script>
+   const user = {
+    username : "Tausif",
+    price: 99,
+     
+      welcomeMessage: function () {
+        console.log(`${this.username}, welcome to website`); //this takes THIS(usernameValue) value(currentContext) a dynamically value(that can be change) 
+        console.log(this); //this has these/this value
+      }
+    }
+
+    user.welcomeMessage()
+    user.username= 'hello' //We change the currentContext(value)
+    user.welcomeMessage()
+    console.log(this); //this has current context as DOM global variable as window objects 
+
+    function chai() {
+      let user = 'chuha'
+      console.log(this.user);
+      //You don't know this in function it gives undefined.
+    }
+    chai()
+
+    //implicit arrow function
+    //when you write in curly braces use return statement
+    const  func1 = (num1,num2) => { return num1+num2}
+    console.log(func1(2,4));
+
+    //when you write in parantheses no return statement
+    const  func2 = (num1,num2) => (num1+num2)
+   console.log(func2(2,3)); 
+
+   //Callback function:it's high order function(function inside function) doesn't have function name
+   const hello = new Promise(function (resolve,reject) {
+
+   }).then(function () {
+  })
+</script>
+
+<script>
+     //1. parameter1 is same as variableName 
+     function func3(parameter1,parameter2) {
+      //3.Here we acess the variable
+      console.log('Hello' + ' ' + parameter1 + ' ' + parameter2);
+    }
+    
+// 2. Argument is same as value of variableName
+    func3('Moti','Chuhia')
+ </script>
+</body>
+</html> 

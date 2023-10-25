@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scopes</title>
+</head>
+<body>
+  <script>
+    function a() {
+      /* This is scope*/
+    }
+
+    if (true) {
+      var a = 20;
+      const b = 34;
+      let c = 34;
+  /* everything written inside curly braces is written inside SCOPE */
+    }
+
+    console.log(a);
+    /*we are wrting outside of scope*/
+    console.log(b);
+    console.log(c);
+    /*VAR will log in console cause it doesn't care scopes wheres const and let will not log in console cause the belive in scope */
+    
+  </script>
+</body>
+</html>
