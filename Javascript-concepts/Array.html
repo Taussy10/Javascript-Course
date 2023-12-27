@@ -31,7 +31,16 @@ It has callBack function curretnValue:
   //  console.log(newArray);
    const newArray1 = Array1.map(function(cValue){ return cValue*2}
    )
-  //  console.log(newArray1);
+    //  console.log(newArray1);
+
+
+   /*1. There is an array(containg objects such as uid,name) named as contacts 
+   we are using map method and destructure the objects so that we can use one by one
+   then give the uniqe id to View(so that every object has it's own unique id)*/
+   {contacts.map(({uid,name,status,imageUrl}) =>( 
+    <View key={uid} style={styles.userCard}>
+    <Image source={{uri:imageUrl}} style={styles.userImage}/>))}
+ 
 
   </script>
 </body>
