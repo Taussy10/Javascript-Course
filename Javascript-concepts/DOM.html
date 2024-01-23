@@ -6,7 +6,7 @@
   <title>document Object Model</title>
 </head>
 <body>
-  
+  <!-- () -->
   <script>
     const consolelog = 'Hello'
     console.log(consolelog);
@@ -29,3 +29,45 @@
 </script> 
 </body>
 </html>
+
+Imagine we have a browser{can be chrome , Microsoft edge,}
+
+What is browser: a software by which we can ineract with information on the WWW
+
+and Browser has window(Small w) object that controls the functionality of browser  
+
+why it's an object: cause in browser every functionality stored in key value pairs and the name of object is Window like: 
+const window = {
+ alert
+ <!-- We don't call it we just give refrence -->
+ ,console
+}
+and we can get the value by window.alert()
+
+Document Object Model(DOM): Displays HTML contnet as object that is present on the browser it is represent as tree structure
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>About elk</title>
+</head>
+<body>
+  The truth about elk.
+</body>
+
+every tag is node{branch} and every node has it's own property such HEAD,TITLE,BODY
+
+innerHTML="It works only for elments inside body{including it} tag"
+
+
+
+// document.body.innerHTML='Hello'
+
+/*document: Entire HTML code 
+Body: content inside body of HTML code 
+innerHTML: property of HTML elments that say write it on that HTML elments
+
+so it will write on body{window} = Hello
+
+
+
+yeah we have windows as top but window is by default lag hi jata hai document ke saath so don't need to write window */ 
