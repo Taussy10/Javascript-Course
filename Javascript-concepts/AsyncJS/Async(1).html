@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <!-- () -->
+  <head>
+    <title>A web page</title>
+    <link rel="Stylesheet" href=" " />
+  </head>
+  <body>
+<!-- 1st know how js works   --> 
+<p>js is single threaded language which works synchronous: sync:together + chronous:time ::::: means time ke saath code execute krega ek baad ek in english code will execute with time and in a cronological order first this then this code will execute with time  </p>
+
+<p>but we can make asynchrounous: not together time: we have function setTimeout() for this </p>
+
+but we can make js async by these things but why cause when we write code there are some code that takes time like calling an API so we need to make sure that code should work when API data came  so we use these to make the code wait and other code executes that doesn't have async keyword {Anology: just like when we order the food we don't wait when it comes then we eat so we don't wiat for  AJAX code when it comes we use it }
+ async await>> promise >> callback hell
+  </body>
+  <!-- CallBack function aisa function jo ki dusre function me likha jaata hai  -->
+  <!-- <script src="Arrays.js">  </script> -->
+  <script>
+   
+  //  e.g.
+// Js is single threaed which one should print setTimeout but not first print alert cause setTimeout is part of Async js
+
+
+
+
+function getData(dataId, getNextData) {
+
+  setTimeout(() => {
+    console.log("dataId: ", dataId);
+
+    if (getNextData) {
+      getNextData()
+    }
+  }, 2000);
+}
+ 
+  // alert("Hello1");
+
+  // this is nested callBack hell problem it's hard to understand 
+  getData(1, () => {
+   getData(2)
+  
+  } ,
+  () => {
+   getData(3)
+  
+  } ,
+  () => {
+   getData(4)
+  
+  } ,
+  
+  )
+
+  </script>
+</html>
+
+
+
+
