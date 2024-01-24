@@ -18,28 +18,29 @@
  /*how to make promises
  two parts: create and consume */
  //1.Create
- const promiseOne = new Promise(function (resolve,reject) {
+ const promiseOne = new Promise( (resolve,reject) => {
 // resolve:It resolve(consume:give what we want)
 //resolve and reject order should be same REM by first we resolve then we reject
 //do async test
 setTimeout(() => {
   console.log('complete');
-  resolve()
+  // Internal function created by js
+  resolve("Done")
 }, 1000);  
  })
 
 //2.consume
  /*consuming the promise: We have then() method which has direct relation with 'resolve' it resolve(consume) the promise*/  
- promiseOne.then(function () {
+ promiseOne.then( () => {
   //then() uses for getting promises values
   console.log('consumed');
  })
 
 
  //getting data 
- const promiseTwo = new Promise(function (resolve,reject) {
-  setTimeout(() => {
-   // the order of resolve and reject written is should be use everywhere
+ const promiseTwo = new Promise( (resolve,reject) => {
+setTimeout(() => {
+// the order of resolve and reject written is should be use everywhere
 resolve([
 {name:"Tausif", rollNo:21},
 {name:"Chuha",rollNo:14}

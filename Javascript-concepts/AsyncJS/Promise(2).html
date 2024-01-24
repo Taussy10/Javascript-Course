@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <!-- () -->
+  <head>
+    <title>A web page</title>
+    <link rel="Stylesheet" href=" " />
+  </head>
+  <body>
+ <!-- () -->
+  </body>
+  <!-- <script src="Arrays.js">  </script> -->
+  <script>
+    // promise is promising that something happen
+
+  function getData(dataId, getNextData) {
+   return new Promise( (resolve, reject) => {
+    setTimeout(() => {
+      console.log("data", dataId);      
+      // if promise solve(resole) then show this message = sucess
+      // resolve("sucess");
+      // you can use error if you get an error
+      reject("Got an error")
+      if (getNextData) {
+        getNextData()
+      }
+    }, 5000);
+   })  
+  }
+
+  // Above is about creating promises but we don't creat promise it's created by API we just handle the promise{analogy: when we order{create promise} something then we just handle{handle promise} it jab aayega to lelenge  } so we have two keyWords .then(prmoise fullfil hone ke baad kuchh kam krna hoto use krte hai) and .catch(prmoise me error aaye to jo kaam krana ho tab use krte hai   ) 
+
+  const getPromise = () => {
+    return new Promise((resolve, reject ) => {
+      console.log("I am promise");
+  
+      // resolve("sucess");
+// we have rejecte the promise
+      reject("Not sucess")
+    })
+  }
+  // .then when promise is fullfiled then we want to work something
+  let promise = getPromise();
+  promise.then((result)=> {
+        // then has paramter called result for showing result
+    // it won't print cause it's rejected
+    console.log("promise fullfiled");
+  })
+
+ promise.catch((error)=>{
+    // then has paramter called result for showing error
+  console.log("Caught an error",error);
+ })
+
+  </script>
+</html>
