@@ -1,18 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>API</title>
-</head>
-<body style="background-color: black; color: white;">
-    
+<html>
+<body>
+
+  <h1>Hello</h1>
+  <img id= "dogImage" alt="Dog image">
   <script>
-    const requestUrl = 'https://randomuser.me/api/'
-   const xhr = new XMLHttpRequest()
-   xhr.open('GET', 'https:fsdfsfsf//randomuser.me/api/')
-   console.log(xhr.readyState);
-   xhr.send()
+    console.log("hello");
+
+    fetch('https://dog.ceo/api/breeds/image/random/1') // api for the get request
+    .then(response => response.json())
+    .then(data =>{
+    console.log(data);
+    let image;
+     image= data.message[0]
+         console.log(image , "img");
+         document.getElementById('dogImage').src = image; // Updating the src attribute of the <img> tag
+
+  
+  }
+  
+  );
+
+
   </script>
+
 </body>
-</html> 
+</html>
+

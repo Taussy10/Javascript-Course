@@ -102,3 +102,12 @@ let newArr = nums.map((val) => {
 })
 
 console.log(newArr);
+
+// new keyword in functions: genrally when you call the function you gets
+// function value and undefined but if you call a function with new keyword 
+// i.e. new good() then it returns vlue of function and object of that function  
+// 
+function good() {
+    console.log("Good Morining");
+    
+}
