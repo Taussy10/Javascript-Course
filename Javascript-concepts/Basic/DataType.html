@@ -33,17 +33,16 @@ Strings in js can be written in 3 types
 👉 3. `backticks`
 
 
-
-👉 3.null: nothing 
+👉 3.null = 0: empty value
 e.g. const age = null
 
-👉 4.undefined: value of the variable hasn't defined.
+👉 4.undefined: value is not assigned.
 e.g. const age = undefined; 
 
 👉 5. NaN: Not a number.
 e.g. const age = 19+w 
 
-👉 6.Boolean: True or False.
+👉 6.Boolean: True = 1 or False = 0.
 
 👉7. Big int : for greater than or less than   ±(2⁵³ -1)
 
@@ -76,7 +75,7 @@ Non-Primitive dataType
 i.e. 
 1. typeof 5 = number
 2. typeof "Hello" = Strings
-3. typeof null = object {it's a historical mistake}
+3. typeof null = object {it's a JS Bug }
 4. typeof NaN = number {it's a historical mistake}
 5. typeof undefined = undefined 
 6. typeof Boolean = function 
@@ -84,12 +83,24 @@ i.e.
 8. typeof symbol = function 
 9. typeof object = function 
 
+
+
+By the way string is more powerful than numbers because 
+
+'hell'+3 = hello3 
+Because 3 has converted in strings
+
+
 Javascript is dynamically typed language: 
 let c = 4;
 c = "Changed"
 variable aren't bound to one dataType they can change
 
+JS supports infinity
+const a = 1/0
+console.log(a); = infinity
 
- 
+
+
 
 </body>
