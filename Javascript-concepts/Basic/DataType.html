@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API</title>
+</head>
+<body style="background-color: black; color: white;">
+    
+    What are data types 🤔
+    👉Data types tells what type of things can be contained by container(variables)
+
+    Two types of dataType
+    1. Primitive : only single values can be stored
+    2. Non-Primitive : collection of values that can stored: objects
+
+
+    Red here: https://javascript.info/types
+
+
+
+👉 There are 8 Primitive data type in js 
+
+👉 1.number: mathematical Numbers such as 1,-5,6
+e.g. const age = 15
+
+👉 2.string: 
+e.g. const name = "John"
+
+Strings in js can be written in 3 types
+👉 1. 'single quotes' 
+👉 2. "double quotes"
+👉 3. `backticks`
+
+
+
+👉 3.null: nothing 
+e.g. const age = null
+
+👉 4.undefined: value of the variable hasn't defined.
+e.g. const age = undefined; 
+
+👉 5. NaN: Not a number.
+e.g. const age = 19+w 
+
+👉 6.Boolean: True or False.
+
+👉7. Big int : for greater than or less than   ±(2⁵³ -1)
+
+ (2⁵³ -1) it's a greatest value that an integer can contains
+
+(2⁵³ -1) it's a least  value that an integer can contains 
+
+const bigInt = 1234567890123456789012345678901234567890n;
+
+Here n specifies that it's a big int
+
+
+👉8. Symbol: used to create unique identifiers.
+
+const symbol1 = Symbol("Javascript")
+const symbol2 = Symbol("Javascript")
+
+Symbol !== Symbol2
+
+
+Non-Primitive dataType
+1. Object: const = {
+    a: "Hello",
+    b: 85,
+}
+
+
+ typeof operator: To get data type of value
+ 
+i.e. 
+1. typeof 5 = number
+2. typeof "Hello" = Strings
+3. typeof null = object {it's a historical mistake}
+4. typeof NaN = number {it's a historical mistake}
+5. typeof undefined = undefined 
+6. typeof Boolean = function 
+7. typeof BigInt = function 
+8. typeof symbol = function 
+9. typeof object = function 
+
+Javascript is dynamically typed language: 
+let c = 4;
+c = "Changed"
+variable aren't bound to one dataType they can change
+
+
+ 
+
+</body>
