@@ -33,7 +33,7 @@ const veggies = [
 
 const xhr = new XMLHttpRequest();
 
- xhr.open("GET", "URL link")
+ xhr.open("GET", "https://dummyjson.com/products")
  xhr.send()
 
 
@@ -62,18 +62,18 @@ gives it's object
 
 
 
-//XML drawbacks 
+//XML drawbacks Callback hell 
 
 
 function getData(dataId, getNextData) {
 
 setTimeout(() => {
   console.log("dataId: ", dataId);
-
+ 
   if (getNextData) {
     getNextData()
   }
-}, 20000);
+}, 2000);
 }
 
 // alert("Hello1");

@@ -49,15 +49,23 @@ while (j/0 > 1) {
 
 let data;
 fetch('https://dummyjson.com/products')
-.then(res =>  data = res.json()  )
-.then(console.log);
+.then((res) => res.json()  )
+.then( (jsonData) => { 
+  data = jsonData
+console.log(data.limit , "HI");
+}  )
+
+
+
 // console.log(data.limit , "Hello");
 
-// data.forEach(element => {
-// // console.log(data , "Hello");
-// console.log(element , "Hello");
-  
-// });
+let trydata;
+fetch('https://dummyjson.com/products')
+  .then(res => trydata  = res.json())
+  console.log(trydata);
+/*When you try to save by this way it won't work because data hasn't
+ been converted so It will give undefined
+ */
 
 
 
