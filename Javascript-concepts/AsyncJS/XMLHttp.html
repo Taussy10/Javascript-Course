@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API</title>
+</head>
+<body style="background-color: black ; color: white;">
+
+  <!-- a () -->
+Before fetch we used to have something called XMLHttpRequest
+
+If you try call console XMLHttpRequest then it will give error 
+
+
+    <script>
+const veggies = [
+  {
+ name: "Elephant"
+},
+  {
+ name: "Dog"
+},
+  {
+ name: "Cat"
+}
+]
+
+/* if you try to call the function XMLHttp it will give error 
+// so always uss new keyword with it
+// console.log( new XMLHttpRequest() , "Hello");
+*/
+
+const xhr = new XMLHttpRequest();
+
+ xhr.open("GET", "URL link")
+ xhr.send()
+
+
+//  It's browser own function and it runs in it's own block
+setTimeout(() => {
+// console.log("TimeOut is use for calling something after certain time");  
+}, 10000);
+
+// SetInterv
+setInterval(() => {
+  // console.log("Calling something after every some interval ");
+}, 5000);
+
+
+
+
+ /*
+function good() {
+  console.log("morning");
+  
+}
+ What is new keyword: when you make Fn in VS code and call it with new{ new good()} chrome then it 
+gives it's object
+
+*/
+
+
+
+//XML drawbacks 
+
+
+function getData(dataId, getNextData) {
+
+setTimeout(() => {
+  console.log("dataId: ", dataId);
+
+  if (getNextData) {
+    getNextData()
+  }
+}, 20000);
+}
+
+// alert("Hello1");
+
+// this is nested callBack hell problem it's hard to understand 
+getData(1, () => {
+ getData(2)
+
+} ,
+() => {
+ getData(3)
+
+} ,
+() => {
+ getData(4)
+
+} ,
+
+)
+
+    </script>
+    
+  
+</body>
+</html> 
